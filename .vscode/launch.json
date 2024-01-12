@@ -10,6 +10,36 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/BlazorNone/BlazorNone.csproj"
+        },
+        {
+            "name": "C#: Server Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/IntServer/IntServer.csproj"
+        },
+        {
+            "name": "C#: WebAssy Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy/IntWebAssy.csproj"
+        },
+        {
+            "name": "C#: WebAssyClient Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy.Client/IntWebAssy.Client.csproj"
+        },
+        {
+            "name": "C#: Auto Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/IntAuto/IntAuto/IntAuto.csproj"
+        },
+        {
+            "name": "C#: AutoClient Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy.Client/IntWebAssy.Client.csproj"
         }
 
     ]
