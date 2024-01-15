@@ -4,43 +4,85 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
-            "name": "C#: None Debug",
-            "type": "dotnet",
+            "name": "None",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/BlazorNone/BlazorNone.csproj"
+            "preLaunchTask": "buildNone",
+            "program": "${workspaceFolder}/BlazorNone/bin/Debug/net8.0/BlazorNone.dll",           
+            "args": [],
+            "cwd": "${workspaceFolder}/BlazorNone",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         },
         {
-            "name": "C#: Server Debug",
-            "type": "dotnet",
+            "name": "IntAuto",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/IntServer/IntServer.csproj"
+            "preLaunchTask": "buildAuto",
+            "program": "${workspaceFolder}/IntAuto/IntAuto/bin/Debug/net8.0/IntAuto.dll",           
+            "args": [],
+            "cwd": "${workspaceFolder}/IntAuto/IntAuto",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         },
         {
-            "name": "C#: WebAssy Debug",
-            "type": "dotnet",
+            "name": "IntServer",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy/IntWebAssy.csproj"
+            "preLaunchTask": "buildServer",
+            "program": "${workspaceFolder}/IntServer/bin/Debug/net8.0/IntServer.dll",           
+            "args": [],
+            "cwd": "${workspaceFolder}/IntServer",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         },
         {
-            "name": "C#: WebAssyClient Debug",
-            "type": "dotnet",
+            "name": "IntWebAssy",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy.Client/IntWebAssy.Client.csproj"
-        },
-        {
-            "name": "C#: Auto Debug",
-            "type": "dotnet",
-            "request": "launch",
-            "projectPath": "${workspaceFolder}/IntAuto/IntAuto/IntAuto.csproj"
-        },
-        {
-            "name": "C#: AutoClient Debug",
-            "type": "dotnet",
-            "request": "launch",
-            "projectPath": "${workspaceFolder}/IntWebAssy/IntWebAssy.Client/IntWebAssy.Client.csproj"
+            "preLaunchTask": "builWebAssy",
+            "program": "${workspaceFolder}/IntWebAssy/IntWebAssy/bin/Debug/net8.0/IntWebAssy.dll",           
+            "args": [],
+            "cwd": "${workspaceFolder}/IntWebAssy/IntWebAssy",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         }
-
     ]
 }
