@@ -30,8 +30,10 @@
 
 @code {
       private bool showMyToast = false;
+      
       private Timer? myTimer;
       @* private static System.Timers.Timer aTimer; *@
+      
       private void ShowToast()
       {
         showMyToast = true;
@@ -54,6 +56,7 @@
          InvokeAsync(() =>
           {
               showMyToast = false;
+              //myTimer?.Dispose();
               myTimer.Dispose();
               StateHasChanged();
           });
