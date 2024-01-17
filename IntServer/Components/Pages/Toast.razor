@@ -1,5 +1,8 @@
 @page "/toast"
 @rendermode InteractiveServer
+@using System
+@using System.Threading
+
 
 <h1>We are trying to open  toast.</h1>
 
@@ -9,7 +12,7 @@
 @if (showMyToast)
 {
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast show"  data-bs-delay='{"show":0,"hide":2000}' data-bs-autohide="true"  role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="liveToast" class="toast show"    role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <img src="..." class="rounded me-2" alt="...">
       <strong class="me-auto">Bootstrap</strong>
@@ -26,15 +29,35 @@
 
 
 @code {
-private bool showMyToast = false;
-    private void ShowToast()
-    {
+      private bool showMyToast = false;
+      private Timer? myTimer;
+      @* private static System.Timers.Timer aTimer; *@
+      private void ShowToast()
+      {
         showMyToast = true;
-    }
+    
+         myTimer = new Timer(CloseToast, null, 2000, Timeout.Infinite);
+        
+        //myTimer = new System.Timers.Timer(2000);
+       // mytimer.Interval = 2000.0;
+      
+        @* myTimer.AutoReset = false;
+        myTimer.Close();  *@
+        @* CloseToast(); *@
+        
+      }
 
-private  void CloseToast()
-{
-    showMyToast = false;
-}   
+      private void CloseToast(object state)
+
+      {
+        showMyToast = false;
+         InvokeAsync(() =>
+          {
+              showMyToast = false;
+              myTimer.Dispose();
+              StateHasChanged();
+          });
+      }
+      
 
 }
