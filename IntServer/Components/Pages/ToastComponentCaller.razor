@@ -4,18 +4,27 @@
 @using System.Threading
 
 
+
 <h1>In Caller - We are trying to open  toast component.</h1>
 
 
 <button type="button" class="btn btn-primary" @onclick="()=> ToastChild!.ShowToastComponent()" id="liveToastBtn">Show live toast</button>
 
-<ToastComponent>
+<ToastComponent EventCallbackToParentMethod="ParentLocalMethod" @ref="ToastChild"></ToastComponent>>
+<br>
+<br>
+<br>
+<label>@modalButtonClicked </label>
 
-</ToastComponent>
 
 @code{
-    public ToastComponent? ToastChild { get; set; }
-    
+    public  ToastComponent? ToastChild { get; set; }
+   private string modalButtonClicked = "InitVal";
+
+    private void ParentLocalMethod(string message)
+    {
+        this.modalButtonClicked = message;
+    }
 }
 
 
