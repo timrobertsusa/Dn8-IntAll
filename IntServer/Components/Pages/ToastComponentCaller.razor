@@ -1,0 +1,21 @@
+@page "/toastCaller"
+@rendermode InteractiveServer
+@using System
+@using System.Threading
+
+
+<h1>In Caller - We are trying to open  toast component.</h1>
+
+
+<button type="button" class="btn btn-primary" @onclick="()=> ToastChild!.ShowToastComponent()" id="liveToastBtn">Show live toast</button>
+
+<ToastComponent>
+
+</ToastComponent>
+
+@code{
+    public ToastComponent? ToastChild { get; set; }
+    
+}
+
+
