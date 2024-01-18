@@ -54,17 +54,12 @@
       }
 
       private void CloseToast(object? state)
-
       {
         showMyToast = false;
-         InvokeAsync(() =>
-          {
-              showMyToast = false;
-              myTimer?.Dispose();
-              //myTimer.Dispose();
-              StateHasChanged();
-          });
-      }
+        InvokeAsync(StateHasChanged);
+        myTimer?.Dispose();        
+      }      
+
       
 
 }
