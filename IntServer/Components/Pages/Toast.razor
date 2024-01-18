@@ -36,7 +36,7 @@
       private bool showMyToast = false;
       
       private Timer? myTimer;
-      @* private static System.Timers.Timer aTimer; *@
+  
       
       private void ShowToast()
       {
@@ -44,15 +44,7 @@
     
          myTimer = new Timer(CloseToast, null, 2000, Timeout.Infinite);
         
-        //myTimer = new System.Timers.Timer(2000);
-       // mytimer.Interval = 2000.0;
-      
-        @* myTimer.AutoReset = false;
-        myTimer.Close();  *@
-        @* CloseToast(); *@
-        
-      }
-
+       
       private void CloseToast(object? state)
       {
         showMyToast = false;
