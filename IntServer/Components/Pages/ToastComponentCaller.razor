@@ -10,7 +10,11 @@
 
 <button type="button" class="btn btn-primary" @onclick="()=> ToastChild!.ShowToastComponent()" id="liveToastBtn">Show live toast</button>
 
-<ToastComponent @ref="ToastChild"></ToastComponent>
+<ToastComponent @ref="ToastChild">  
+     <Body>       
+        <p>Tim can't touch this!</p>
+    </Body>
+</ToastComponent>
 
 
 
