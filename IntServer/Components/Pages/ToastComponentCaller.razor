@@ -11,20 +11,12 @@
 <button type="button" class="btn btn-primary" @onclick="()=> ToastChild!.ShowToastComponent()" id="liveToastBtn">Show live toast</button>
 
 <ToastComponent @ref="ToastChild"></ToastComponent>
-<br>
-<br>
-<br>
-<label>@modalButtonClicked </label>
+
 
 
 @code{
-    public  ToastComponent? ToastChild { get; set; }
-   private string modalButtonClicked = "InitVal";
-
-    private void ParentLocalMethod(string message)
-    {
-        this.modalButtonClicked = message;
-    }
+    private  ToastComponent? ToastChild { get; set; }
+  
 }
 
 

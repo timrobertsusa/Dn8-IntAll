@@ -12,7 +12,7 @@
     <div class="toast-header">
       <img src="/favicon.png" class="rounded me-2" alt="...">
       <strong class="me-auto">Bootstrap</strong>
-      <small>a small message</small>
+      <small>4 secs ago</small>
       <button type="button"  class="btn btn-outline-secondary border-0"  data-dismiss="modal" aria-label="Close" @onclick="CloseToastComponent">                    
                     <span style="font-size: 22px; font-weight: bold;" aria-hidden="true">&times;</span>                
                 </button>
@@ -26,14 +26,10 @@
 </div>
 }
 
-
-
 @code {
       private bool showMyToast = false;
-      
       private Timer? myTimer;
-  
-      
+
       public void ShowToastComponent()
       {
         showMyToast = true;
